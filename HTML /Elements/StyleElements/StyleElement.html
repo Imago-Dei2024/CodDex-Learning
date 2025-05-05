@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html> 
+  <!-- The Style Attribute --> 
+  <!-- We can apply the style attribute to any html element to stylize certain aspects of that element, such as what color the text should be --> 
+  <p> Roses are <span style="color:red;">red</span>.<br /> 
+      Violets are <span style="color:blue;">blue</span>.
+  </p> 
+  <!--This attribue is made of a special style --> 
+  <!--Style is made of a property (i.e. color) and a value (red/blue), and are seperated by a colon: --> 
+  <!--Multiple styles can be applied to an element byt they must be seperated by a semi-colon ; --> 
+  <p> 
+    Roses are <span style="color:red; text-decoration:underline;">red</span>.<br /> 
+    Violets are <span style="color:blue; text-decoration:underline">blue</span>.
+  </p> 
+
+  <!-- The <style> Element --> 
+  <!-- Alternativeley, the <style> Element can be used in the <head> to style our elements in the <body> --> 
+  <head> 
+    <style> 
+      Styles for elements go here 
+    </style> 
+  </head> 
+  <body> 
+    ...elements go gere 
+  </body>  
+  <!-- Element can be selected inside the <style> element using { } curly braces: --> 
+    <style> 
+      element { 
+        property: value; 
+      } 
+    </style> 
+
+  <!-- Inside the <style> element, you can use a period(class), or a hashtag(#)(id) to select one or more specific elements that have a matching class or id. --> 
+  <head> 
+    <style> 
+      span {
+        text-decoration: underline; 
+      } 
+
+      #red-word { 
+        color: red; 
+        } 
+
+      #blue-word { 
+        color: blue 
+      } 
+      </style> 
+  </head> 
+  <body> 
+    <p> 
+      Roses are <span id="red-word">red</span>.<br /> 
+      Violets are <span id="blue-word">blue</span>.<br /> 
+    </p> 
+  </body> 
+
+
+<html>  
+
+
+<!-- Athletes College Matchmaking --> 
