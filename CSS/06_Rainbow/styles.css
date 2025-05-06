@@ -1,0 +1,20 @@
+/* -- INSTRUCTIONS -- */ 
+/* Next, inside the <body>, populate each <h2> heading element with your top three favorite rainbow colors:  
+    Red
+    Orange
+    Yellow
+    Green
+    Blue
+    Indigo
+    Violet */ 
+#first-color { 
+    color:skyBlue; 
+} 
+
+#second-color { 
+    color: rgb(83, 200, 83); 
+} 
+
+#third-color { 
+    color:#29ff1a 
+}
