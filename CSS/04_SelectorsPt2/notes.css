@@ -1,0 +1,25 @@
+/* -- Grouping -- */ 
+/* We can group styles together across multiple elements to prevent overcomplicating our files */ 
+
+ul { 
+    border: 1px solid; 
+    width: 50px;
+} 
+
+ol { 
+    border: 1px solid; 
+    width: 50px; 
+} 
+
+/* Grouped style for less complication */ 
+ul, ol { 
+    border:1px; 
+    width:50px;
+} 
+
+/* Combining */  
+/* We can get more specific by using the ">" symbol to select child elements, such as only <li> elements under unordered lists: */ 
+ul > li { 
+    border: 1px solid; 
+    width: 50px;
+}
