@@ -1,0 +1,8 @@
+/* In a given CSS file, we write rules for how elements should be styled on our page */ 
+/* Every rule begins with a selector, followed by curly brackets { } */ 
+/* Inside declarations are made up of "property:value" pairs, and each line ends w/ a semicolon. */  
+
+body > p { 
+    color: red;
+    font-size: 25px;
+}
