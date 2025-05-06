@@ -1,0 +1,22 @@
+/* --- Sizing in CSS --- */ 
+img { 
+    width:250px;
+    height:400px;
+} 
+
+/* --- Absolutes vs. Relative Units --- */ 
+
+/* "Absolute" units are usually expressed as numbers, with or without a decimal. 
+    they are fixed and do not change in size according to the size of its direct parent element.
+    "px" are the most commonly used fixed element. */  
+element { 
+    width: 10px; 
+    height: 10px; 
+}
+
+/* "Relative" units, means that element will change if the size of something else changes. 
+    like it's parent element or the computer screen itself 
+    these are often expressed as percentages "%" */  
+element { 
+    width:50% 
+}

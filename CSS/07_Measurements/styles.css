@@ -1,0 +1,9 @@
+/* 1.) Inside the style.css file, select the first image by its id (#absolute) and set its width to 100px */ 
+#absolute { 
+    width: 100px;
+}
+
+/* 2.) Next, select the other image by its id (#relative) and set its width to 50%. */  
+#relative { 
+    width: 50%;
+}
