@@ -1,0 +1,153 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Final Project - Resturant Menu</title>
+        <style> 
+
+            hr {
+                width:150%; 
+            } 
+
+            .Logo {
+               width: 100%;
+               height:350px; 
+               
+            } 
+
+            .MenuImage {
+                width:50%;
+                height:250px;
+            } 
+
+            .Menu { 
+                background-color: rgb(213, 206, 206);
+            } 
+
+            .OrderForm {
+                background-color: rgb(172, 216, 216); 
+            }
+
+        </style>
+    </head>
+    <body> 
+        <header>
+            <figure> 
+                <img class="Logo" id="header-img"
+                    src="images/logo.jpg"
+                    alt="Our Logo" 
+                />  
+            </figure> 
+            <hr /> 
+
+            <h1>Welcome to Connor's Epic Resturant</h1> 
+            <nav> 
+                <ul> 
+                    <li><a href="menu.html">Our Menu</a></li> 
+                    <br>
+                    <li><a href="order-form.html">Place an Order</a></li>
+                </ul>
+            </nav>
+        </header>
+        <hr /> 
+
+        <main> 
+            <section class="Menu" id="OurMenu"> 
+                <h2> Menu </h2>
+                <article> 
+                    <figure> 
+                        <img class="MenuImage" id="Lobster"
+                            src="images/Lobster.jpg"
+                            alt="Premium Lobster"
+                        /> 
+                    </figure> 
+                    <h3>Premium Pacific Lobster</h3> 
+                    <p><i> Succulent Premium Pacific Lobster, 
+                        grilled to perfection, drizzled with garlic-herb butter, 
+                        served with roasted asparagus and truffle mashed potatoes. 
+                        A decadent coastal indulgence. 
+                    </i></p>
+                </article>
+                <br><br> 
+                <hr /> 
+
+                <article> 
+                    <figure> 
+                        <img class="MenuImage" id="Lamb"
+                            src="images/lamb.jpg"
+                            alt="Premium Lamb Chops" 
+                        /> 
+                      
+                    </figure>
+                    <h3>Premium Lamb Chops</h3> 
+                    <p><i>Juicy Premium Lamb Chops, 
+                        seared to a perfect medium-rare, 
+                        glazed with rosemary-balsamic reduction, 
+                        paired with minted pea puree and roasted baby carrots. 
+                        A bold, savory masterpiece. 
+                    </i></p>
+                </article> 
+                <br><br> 
+                <hr />
+
+                <article> 
+                    <figure> 
+                        <img class="MenuImage" id="Steak"
+                            src="images/steak.jpg"
+                            alt="Premium Sirloin Steak" 
+                        /> 
+                    </figure>
+                    <h3>Premium Sirloin Steak</h3> 
+                    <p><i> Premium Sirloin Steak, expertly grilled to your liking, 
+                        topped with a rich red wine demi-glace, 
+                        served with crispy parmesan fries and charred broccolini. 
+                        A carnivores dream.
+                    </i></p>
+                </article> 
+                <br><br> 
+                <hr /> 
+            </section> 
+
+            <section class="OrderForm" id="PlaceAnOrder"> 
+                <h2> Place Your Order </h2> 
+                <form>  
+                    <b>Enter Your Information Below:</b> 
+                    <br><br> 
+                    <label> Name for the Order: </label><input type="text">
+                    <br><br> 
+                    <label>Email Address: </label><input type="email"> 
+                    <br><br> 
+                    <label>Phone Number: </label><input type="phone-number"> 
+                    <br><br>
+                    Would you like to recieve email notices for promotionals moving forward?:<br>
+                    <input type="radio" name="option">Yes
+                    <input type="radio" name="option">No
+                    <br><br> 
+                    <hr /> 
+                    <br> 
+                    <b>Select Menu Item:</b><br>
+                    <input type="radio" name="option">Pacific Lobster 
+                    <input type="radio" name="option">Lamb Chops 
+                    <input type="radio" name="option">Sirloin Steak 
+                    <br><br> 
+                    <b>Enter Quantity:</b> <input type="number" min="0" required> 
+                    <br><br>
+                    <b> Select 2 Sides: </b> <br>
+                    <input type="checkbox">Mashed Potatoes<br> 
+                    <input type="checkbox">Steamed Vegetables<br> 
+                    <input type="checkbox">Wild Rice<br> 
+                    <input type="checkbox">Premium French Fries<br> 
+                    <br>
+                    <textarea id="Special Requests" rows="7" cols="55" placeholder="Enter any special requests for this order."></textarea>
+                    <br>
+                    <input type="submit" value="Checkout"> 
+                    <br><br> 
+                    <hr /> 
+                </form>
+            </section> 
+        </main> 
+
+        <footer> 
+            <p> Made with love by <b><i>claber9805</i></b></p>
+        </footer>
+    </body>
+</html>
