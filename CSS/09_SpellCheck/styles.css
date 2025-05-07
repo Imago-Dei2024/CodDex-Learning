@@ -1,0 +1,18 @@
+/* 1.) Select the <h4> heading element and center it with the "text-align" property. */   
+h4 { 
+    text-align: center;
+}
+
+/* 2.) Select the <span> elements and give them a "text-decoration" property with the following values: 
+        a.) A line underneath the text 
+        b.) A wavy style 
+        c.) The color red. 
+        d.) 2px of thickness. */ 
+
+h4 {
+    text-align: center;
+}
+          
+span { 
+    text-decoration: underline wavy red 2px;
+}

@@ -1,0 +1,17 @@
+/* In CSS there are three primary ways to align text */ 
+#left-align { 
+    text-align: left;
+} 
+
+#center-align{ 
+    text-align: center; 
+}  
+
+#right-align{ 
+    text-align: right;
+} 
+
+/* --- Decoration --- */ 
+p { 
+    text-decoration: underline;
+}
