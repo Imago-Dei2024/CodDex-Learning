@@ -1,0 +1,19 @@
+/* --- Padding Box --- */ 
+span { 
+    padding:40px;
+} 
+
+/* If we want to give seperate padding values to any side of an 
+    element: */ 
+
+span { 
+    padding-top: 5px; 
+    padding-right: 10px; 
+    padding-bottom: 15px; 
+    padding-left: 20px;
+} 
+
+/* You can do the above style using just the padding propery: */ 
+span { 
+    padding: 5px 10px 15px 20px ; 
+} 
