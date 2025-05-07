@@ -1,0 +1,20 @@
+/* 1.) Select the <div> division element with an #outer id and apply: 
+        a.) A width and height of 500px. 
+        b.) A background-color set to your favorite color (it can be named, a hexadecimal, or RGB). */  
+
+div.outer { 
+    width: 500px; 
+    background-color: skyBlue; 
+}
+
+/* 2.) Select the <div> division element with an #inner id and apply: 
+        a.) A width and height of 400px. 
+        b.) A background-image that uses a picture of your favorite animal. */
+div.inner { 
+    width: 400px; 
+    background-image:url(add image here);
+}
+
+
+/* Note: If needed, use the background-size and background-repeat properties 
+      to fit the image into the <div> division element. */ 

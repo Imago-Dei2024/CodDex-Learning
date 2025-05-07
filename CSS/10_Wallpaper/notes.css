@@ -1,0 +1,46 @@
+/* ---- BG Color ---- */ 
+/* Let's return to the concept of colors in CSS!
+
+In the first exercise, we learned to use the color property to add color to our text. But that's not all that we can do with colors. We can "paint" the backgrounds of our page elements with colors, too!
+
+For this, we use the "background-color" property!
+
+Any of the ways to apply color, that we already learned about, can be applied to this property: */ 
+
+div { 
+    background-color: blue; 
+} 
+
+/* With rgb function */ 
+div { 
+    background-color:rgb(42, 234, 42);
+} 
+
+/* With hex colors */ 
+div { 
+    background-color:azure 
+}
+
+/* ---- BG image ---- */ 
+div { 
+    background-image: url('https://cdn.pixabay.com/photo/2017/08/10/19/13/city-skyline-2626619_960_720.jpg');
+} 
+
+/* For the value of the background-image property, we use a special url() function that accepts a URL or file path to an image. 
+As long this is a valid path, the image should appear, like so: */ 
+
+/* Sometimes, the original size of the image might be too large for the background. 
+This can be helped with the "background-size" property. */ 
+
+/* This property will scale the image down to fit inside its container. 
+    With contain, the image will not be cropped; the cover value will crop the image. */ 
+div { 
+    background-size: contain;
+}  
+
+/* Background images may repeat if the container is larger than the image. To prevent this, and have only one image 
+    in the container, use the "background-repeat" property, followed by the "no-repeat" option: */ 
+
+div { 
+    background-repeat: no-repeat; 
+}
