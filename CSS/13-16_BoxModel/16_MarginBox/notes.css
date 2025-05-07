@@ -1,0 +1,40 @@
+/* The Margin Box */ 
+/* This surrounds the elements border, and is what seperates 
+    elements from one another on the page. */ 
+
+/* Add margin to entire box */ 
+span { 
+    margin: 40px;
+} 
+
+/* Add margins to a specific side of a box. */ 
+span { 
+    margin-top: 20px; 
+    margin-right: 10px; 
+    margin-bottom: 20px; 
+    margin-left: 10px 
+} 
+
+/* Margin has a short-hand element, however, 
+    unlike other boxes, the margin box has its own width and height 
+    that is not counted towards the element's size. */  
+span { 
+    margin: 20px 10px 20px 10px; 
+}
+/* NOTE: what is counted towards an element's size is covered in next session */ 
+
+/* ---- Centering Content ---- */ 
+/* You can center elements with the margin property using "auto" */ 
+#container-element { 
+    width: 300px; 
+    height: 300px; 
+    border: 3px solid; 
+} 
+
+#inner-element { 
+    width: 100px; 
+    height: 100px; 
+    border: 1px solid; 
+    background-color: orange; 
+    margin: auto; 
+}
