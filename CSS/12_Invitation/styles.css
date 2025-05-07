@@ -1,0 +1,35 @@
+/* Be as creative as you want, but include the following */ 
+/* 1.) Select the #invite-wrapper: 
+        a.) Assign a width that uses a percentage in the 25 - 75% range 
+        b.) Set the padding property to 25px 
+        c.) Add a background-color that uses either rgb() or hexadecimals 
+        d.) Color the text with a color property that uses either rgb() or hex
+
+    2.) Select h1: 
+        a.) Give this a font-family 
+        b.) Align the tect in the center with "text-align" 
+    
+    3.) Select #invite-text and give it width between 75 - 90% 
+
+    4.) Select #itinerary and align its text to center  */ 
+
+    #invite-wrapper { 
+        width: 50%;
+        padding: 25px;
+        background: skyblue; 
+        color: lightcoral;
+    } 
+    
+    h1 { 
+        font-family: Arial, sans-serif; 
+        text-align: center; 
+    } 
+    
+    #invite-text { 
+        width: 100%;
+        text-align: center;
+    } 
+    
+    #itinerary { 
+        text-align: center;
+    }
