@@ -1,0 +1,33 @@
+/* --- Border Box --- */ 
+
+/* 
+    1.) border-width --> Determines "thickness" of border 
+    2.) border-style --> includes values like solid, dashed, dotted 
+    3.) border-color --> Can be set with named color */ 
+h1 { 
+    border: 2px solid blue; 
+}
+
+h1 { 
+    border-width: 2px; 
+    border-style: solid; 
+    border-color: blue;
+}
+
+/*  4.) border-top --> selects top border only 
+    5.) border-right --> selects right border only 
+    6.) border-bottom --> selects bottom border only 
+    7.) border-left --> selects left border only */  
+h1 { 
+    border-top: 5px dashed red; 
+    border-right: 5px dotted purple; 
+    border-bottom: 5px double yellow; 
+    border-left: 5px solid green;
+}
+
+/* -- Round Corners -- */ 
+h1 { 
+    border: 2px solid blue; 
+    border-radius: 5px;
+}  
+/* the larger the value, the rounder the corner will be */  
