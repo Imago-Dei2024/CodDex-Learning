@@ -1,0 +1,8 @@
+/* --- 13. Box Model --- */ 
+/* The box model describes how an element handles its content 
+    and the space around it. */ 
+/* Every element is made of 4 box layers: 
+    1.) A "content box" for things like text and images 
+    2.) A "padding-box" of space around the content 
+    3.) A "border-box" that goes around the padding 
+    4.) A "margin-box" of empty space that surrounds the whole element 
