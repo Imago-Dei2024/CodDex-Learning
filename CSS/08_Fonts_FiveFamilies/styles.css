@@ -1,0 +1,9 @@
+/* 1.) Add a "font-family" of one of the five. Make sure to include a fall back font. */ 
+body > p { 
+    font-family: Arial, sans-serif;
+}
+
+/* 2.) Add a "font-size" property. You can use either absolute or relative units. */ 
+body > p { 
+    font-weight: 600px;
+} 

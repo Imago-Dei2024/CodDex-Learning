@@ -1,0 +1,54 @@
+/* In CSS there are five generic font families: 
+    1.) Serif 
+        a.) Georgia 
+        b.) Times New Roman 
+        c.) Baskerville 
+
+    2.) Sans-serif  
+        a.) Arial 
+        b.) Helvetica Neue 
+        c.) Open Sans 
+
+    3.) Monospace 
+        a.) Consolas
+        b.) Courier New 
+        c.) Lucidia 
+
+    4.) Cursive 
+        a.) Brush Script MT
+        b.) Lobster 
+        c.) Dancing Script 
+
+    5.) Fantasy
+        a.) Impact 
+        b.) Chiller 
+        c.) Jokerman 
+*/  
+
+/* To assign these font-familys in CSS, we use: */
+p { 
+    font-family: Arial, sans-serif; 
+}
+    
+   /* Notice how we added "sans-serif" after "Arial"? That's because it is always good to 
+    include a general font name after desired font name. This way the browser has a fallback font if needed */ 
+
+/* --- Font Properties --- */ 
+/* "font-size:" can be done with absolute units (px, pt, etc.) OR relative units (percentages, em, rem, etc.) */ 
+/* With "absolute" units */ 
+p {
+    font-size:12;
+} 
+
+p{ 
+    font-size:12em; 
+}
+
+/* Font-size should be applied in an accesible way, which means absolute units should generally be avoided */ 
+
+/* We can also use "font-weight" to set the default "thickness" of a given elements text. 
+    font-weight uses keyword values(lighter, bolder, etc.) AND numerical values (100 - 800) 
+    Keep the following in mind when using numerical values: 
+        1.) Anything less than 400 makes the font thinner or lighter  
+        2.) The 400-700 range is considered "normal" for most fonts 
+        3.) Anything above 700 usually makes the font bolder. */ 
