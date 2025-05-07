@@ -1,0 +1,12 @@
+/* 1.) Include shorthand border property for h1 which includes
+        width, style, and color  */ 
+h1 { 
+    border: 400px dashed red; 
+}
+
+/* 2.) For the p element, add shorthand font property with 
+        values for size, weight, and font-family */ 
+
+body > p {
+    font: 800 16px Arial, sans-serif;
+}
