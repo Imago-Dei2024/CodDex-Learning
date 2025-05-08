@@ -1,0 +1,105 @@
+/* ---- INSTRUCTIONS ---- */ 
+/*  1.) Select the h1 heading element and add a margin to the top and bottom. 
+
+    2.) Select elements with the nav-item class, add a width of 33%, and style with at least: 
+        a.) A display of inline-block 
+        b.) A border with a thickness and color.
+        c.) A border-radius of 5px 
+        d.) A padding of 5px. 
+        e.) A margin of 10px. 
+    3.) Add 20px of margin on top of the main element 
+
+    4.) Add 10px of margin to the top and bottom of the section elements. 
+
+    5.) Select #welcome > p, center-align the text, and add 5em of margin to the left and right side of this element. 
+
+    6.) Select both the #catalog-input and #form-btn elements, and: 
+        a.) Center-align the text. 
+        b.) Add a font-size of 1.25rem and a font-weight of 800 
+        c.) Add 8px to the padding property.  
+
+    7.) In just the #catalog-input element, add a border that is solid and 2px-thick, as well as a width of 37.5%. 
+
+    8.) Center-align the text in the #staff-picks element. 
+
+    9.) Select all elements with a class of .staff-pick-img and add the following: 
+        a.) A border that is solid and 1px-thick 
+        b.) a border-radius of 0 7px 7px 0 
+        c.) A width of 10em and a height of 15em 
+    */ 
+
+
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}  
+
+
+body { 
+    width: 100%; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    text-align: center; 
+} 
+
+header { 
+    background-image:url('https://cdn.pixabay.com/photo/2020/07/23/01/29/books-5430104_1280.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    height: 200px; 
+
+} 
+
+
+h1 { 
+    margin-top: 0; 
+    margin-bottom: 0; 
+} 
+
+.nav-item { 
+    width: 33%; 
+    display:inline-block; 
+    border: 5px red; 
+    border-radius: 5px; 
+    padding: 5px; 
+    margin: 10px; 
+} 
+
+main { 
+    margin-top: 20px;
+} 
+
+section { 
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+} 
+
+#welcome > p { 
+    text-align: center; 
+    margin-left: 5em; 
+    margin-right: 5em; 
+} 
+
+#catalog-input, #form-button { 
+    text-align: center; 
+    font-size: 1.25em; 
+    font-weight: 800; 
+    padding: 8px; 
+} 
+
+#catalog-input { 
+    border: 2px solid; 
+    border-width: 37.5%;  
+} 
+
+#staff-picks { 
+    text-align: center; 
+} 
+
+.staff-pick-img { 
+    border: 1px solid; 
+    border-radius: 0 7px 7px 0; 
+    width: 10em; 
+    height: 15em; 
+}
