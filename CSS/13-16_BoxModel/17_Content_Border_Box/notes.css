@@ -1,0 +1,27 @@
+/* Content Box vs. Border box */ 
+
+/* By default, an elements width and height properties only deal with the content box. But 
+    but if theres any padding around the content, or a border, the entire element appears  
+    wider on the page */ 
+
+/* The box-sizing propery tells our website how to calculate the width and height properties 
+    of a given element. */ 
+
+#content-box { 
+    text-align: center; 
+    background-color: skyBlue; 
+    width: 150px; 
+    height: 150px; 
+    padding: 20px; 
+    border:2px; 
+} 
+
+#border-box { 
+    text-align: center; 
+    background-color: skyBlue; 
+    width: 150px; 
+    height: 150px; 
+    padding: 20px; 
+    border: 2px; 
+    box-sizing: border-box;                            
+}
