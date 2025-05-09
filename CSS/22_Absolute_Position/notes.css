@@ -1,0 +1,3 @@
+/* --- Absolute Position --- */ 
+/* When we give an element and absolute position, we break it out of a pages flow */ 
+/* If we then give it a top, right, left, and or left property, it is placed according to the top-left of its closest non-static element */ 
