@@ -1,0 +1,8 @@
+ /* The relative position allows the element to be "moved" around the screen */ 
+ /* When we set the elements position property to anything other than static, it can be moved with the top, bottom, right, 
+    and left, properties, */ 
+
+
+/* --- Z Index --- */ 
+/* when you don't want elements overlapping with one another, use z-index 
+    "z-index" changes the way elements are layered on the site 

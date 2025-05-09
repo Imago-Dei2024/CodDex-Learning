@@ -1,0 +1,21 @@
+div { 
+    width: 200px; 
+    height: 200px;  
+} 
+
+#div-a { 
+    background-color: red; 
+} 
+
+#div-b { 
+    background-color: blue;
+    position: relative; 
+    left: 25px; 
+    bottom: 25px;  
+    z-index: -1
+
+} 
+
+#div-c { 
+    background-color:lightgreen; 
+}
