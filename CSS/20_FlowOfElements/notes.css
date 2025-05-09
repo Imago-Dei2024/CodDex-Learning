@@ -1,0 +1,12 @@
+/* --- Normal Flow of Elements --- */ 
+/* When elements are displayed on the screen,  
+    they will appear as close to the top and left edges of their parent elements as possible. 
+    They will also appear either as blocks or inline elements. */ 
+
+/* This is known as the normal flow of Elements */ 
+/* We can control how an element is normally position in this flow with the "position" property */ 
+/* By default, all elements have a static position */ 
+
+span { 
+    position: static; 
+}
