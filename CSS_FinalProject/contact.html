@@ -1,0 +1,144 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 for universal text-support --> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures Responsive Design for Mobile Devices --> 
+        <link href="styles.css" rel="stylesheet"> 
+        <title>Contact Me</title>
+    </head> 
+    <body> 
+        <header> 
+            <div class="hero"> 
+                <h1>Personal Website - Connor Laber</h1> 
+                <p>Reach out to to discuss projects or opportunities</p>
+            </div> 
+            <nav> 
+                <ul> 
+                    <li><a href="index.html">Home</a></li> 
+                    <li><a href="about.html">About Me</a></li> 
+                    <li><a href="projects.html">Projects</a></li> 
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        </header>
+        <hr /> 
+
+        <main> 
+            <section id="contact"> 
+                <h2>Contact Me</h2> 
+                <div class="contact-container"> 
+                    <form> 
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required> <!-- Text input for users name --> 
+                        <br><br> 
+                        <label for="email">Email</label> 
+                        <input type="email" id="email" email="email" required> 
+                        <br><br> 
+                        <label for="phone">Phone</label> 
+                        <input type="tel" id="phone" name="phone" required> 
+                        <br><br> 
+                        <label for="contact-method">Prefered Contact Method</label> 
+                        <select id="contact-method" name="contact-method"> <!-- Drop down for contact-method menu -->
+                            <option value="email">Email</option> 
+                            <option value="phone">Phone</option> 
+                            <option value="social">Social Media</option>
+                            <option value="blank"></option>
+                        </select>  
+                        <br><br> 
+                        <textarea id="message" rows="7" cols="42" placeholder="Please enter a short message detailing what you would like to connect about"required></textarea> <!-- Text Are for Users Message-->
+                        <br>
+                        <button type="submit">Send Message</button>
+                    </form> 
+                    <br>
+
+                    <div class="social-links"> 
+                        <h3>Connect With Me</h3> 
+                        <a href="www.linkedin.com/in/connor-laber-0a8871171">LinkedIn</a> 
+                        <br>
+                        <a href="https://www.facebook.com/connor.laber.1">Facebook</a> 
+                        <br>
+                        <a href="https://x.com/ConnorL97860"><i>X</i></a>
+                        <br>
+                    </div>
+                </div> 
+            </section>  
+            <hr /> 
+            
+
+            <section id="newsletter"> <!-- Section for News Letter Subscription -->
+                <h2>Subscribe to My Newsletter</h2> 
+                <p>Get updates on coding tips, FinTech insights, and my latest projects</p> 
+                <form class="newsletter-form"> <!-- Form for Newsletter subscription -->
+                    <label for="newsletter-name">Name (Optional) </label> <!-- Label for optional Name field -->
+                    <input type="text" id="newsletter-name" name="newsletter-name"> <!-- Text input for users name --> 
+                    <br><br> 
+                    <label for="newsletter-email">Email</label> 
+                    <input type="email" id="newsletter-email" name="newsletter-email" required> <!-- Email input for newsletter subscription --> 
+                    <br><br>
+                    <button type="submit">Subscribe</button> <!-- Submit button for the form -->
+                    <br><br>
+                </form>
+            </section> 
+            <hr />  
+
+
+            <section id="articles"> <!-- Section for Articles/Blog posts --> 
+                <h2>Insights & Tips</h2> 
+                <div class="article-grid"> <!-- Container for Articles Cards, styled as a grid --> 
+                    <article class="article-card"> 
+                        <h3>Tips for Self-Taught Programmers</h3> 
+                        <p>Start with small projects, like building a personal website, 
+                            and use free resources like Codecademy or freeCodeCamp. 
+                            Consistency is key—code daily, even for 30 minutes.</p> 
+                        <a href="#" class="learn-more">Read More</a> <!-- Link for Full Article (placeholder rn) --> 
+                    </article>
+                </div>
+            </section> 
+            <hr /> 
+
+
+            <section id="FAQ"> <!-- Section for FAQ --> 
+                <h2>Frequently Asked Questions</h2> 
+                <div class="faq-container"> <!-- Container for FAQ items --> 
+                    <div class="faq-item"> <!-- Individual faq item --> 
+                        <input type="checkbox" id="FAQ1" class="FAQ-toggle"> <!-- Checkbox for toggling FAQ Answer --> 
+                        <label for="FAQ1" class="FAQ-Question">How did you learn to code?</label> <!-- Question Label, clickable to toggle -->
+                        <div class="FAQ-Answer"> <!-- Answer content, show/hidden via CSS -->
+                            <p>I am fully self-taught, starting with HTML and CSS to build a website for my mothers business. 
+                                I used online resources like Codecademy and YouTube tutorials, 
+                                then expanded to Python, JavaScript, and Swift.</p>
+                        </div>
+                    </div>  
+                    <br><br> 
+
+                    <div class="faq-item"> <!-- Second FAQ item --> 
+                        <input type="checkbox" id="FAQ2" class="FAQ-toggle"> 
+                        <label for="FAQ2" class="FAQ-Question">What is your favorite project so far?</label> 
+                        <div class="FAQ-Answer">  <!-- Answer Content, show/hidden via CSS -->
+                            <p> My ReThink Mental Health website was a rewarding challenge, 
+                                combining HTML, CSS, and JavaScript to create a user-friendly 
+                                front-end for a meaningful cause</p>
+                        </div>
+                    </div>  
+                    <br><br>  
+
+                    <div class="faq-item"> <!-- Third FAQ item -->
+                        <input type="checkbox" id="FAQ3" class="FAQ-toggle"> 
+                        <label for="FAQ3" class="FAQ-Question">Do you take freelance work?</label> 
+                        <div class="FAQ-Answer"> <!-- Answer content, show/hidden via CSS -->
+                            <p>Yes, I am open to freelance projects, 
+                                especially in web development or FinTech. 
+                                Contact me to discuss your needs!</p>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+            <hr /> 
+            <br><br><br><br> 
+        </main> 
+        <footer> <!-- Footer section for site info --> 
+            <p>™2025 Connor Laber. All Rights Reserved. </p> <!-- Copyright Notice --> 
+            <a href="projects.html">View Projects</a>
+        </footer>
+    </body>
+</html>
