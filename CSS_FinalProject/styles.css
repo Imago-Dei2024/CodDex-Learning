@@ -1,0 +1,19 @@
+* { 
+   margin: 0; /*Removes default margins from all elements */ 
+   padding: 0; 
+   box-sizing: border-box; /* Males width/height include padding and borders */ 
+}    
+
+body { 
+    font-family: 'Inter', sans-serif; /* Sets Inter as the Default Font */ 
+    line-height: 1.7; /* Increases line spacing for readability */ 
+    color: #2d3748; /* Sets darker gray text for contrast. */ 
+    background-color: #F4F4F9; /* Sets light gray background for the page */ 
+    scroll-behavior: smooth; /*Enables Smooth scrolling for anchor links */ 
+    overflow-x: hidden; /*Prevents Horizontal Overflow */ 
+} 
+
+/* Header & Navigation */ 
+header { 
+    
+}
