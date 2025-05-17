@@ -1,44 +1,42 @@
-<!DOCTYPE html> 
-<html> 
-    <head> 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="styles.css" rel="stylesheet"> 
-        <title>My CSS Final Project</title>
-    </head> 
-    <body> 
-        <header> 
-            <div class="hero"> 
-                <h1>Connor Laber's Personal Website</h1> 
-                <p>Welcome to my <i><b>personal website</b></i></p>  
-                <a href="contact.html" class="cta-button">Contact Me</a>
-            </div> 
-            <nav>   
-                <ul> 
-                    <li><a href="about.html"></a></li>
-                    <li><a href="projects.html"></a></li> 
-                    <li><a href="contact.html"></a></li>
-                </ul>
-            </nav>
-        </header> 
-        <main>  
-            <section id="about"> 
-                <h2>About Me</h2> 
-                <p>My name is Connor Laber. A little bit of background for you; I was born and raised in the wonderful rocky mountains in Denver, Colorado. I grew up fishing, 
-                    hiking, and mountain biking. I hold two bachelors degrees both in <b>Business Administration</b> and <b>Finance.</b> I am a self taught programmer, with proficency and understanding 
-                    in several coding languages including: python, html, css, javascript, and Swift. I first began programming for the sake of helping meet a need for my mothers businesses. 
-                    They were in desperate need of a website, and me being a curious learner decided that I wanted to learn programming so that I could build them their own, personalized 
-                    website. In the future, I hope to apply my skills and expertise both in FinTech and/or private equity. 
-                </p> 
-                <a href="about.html" class="cta-button">Learn More About Me</a>
-            </section> 
-                <section id="projects"> <!-- Section for Projects content, with ID for linking -->
-                <h2>My Projects</h2> <!-- Heading for the Projects section -->
-                <p>Explore my work in web development, iOS mobile development, and certifications. I’ve built front-end websites and tools to solve real-world problems, leveraging my skills in HTML, CSS, JavaScript, and more.</p> <!-- Brief intro to your projects -->
-                <a href="projects.html" class="cta-button">View All Projects</a> <!-- Button linking to projects.html -->
-            </section>
-        </main> 
-        <footer> 
-        </footer>
-    </body>
+<!DOCTYPE html> <!-- Declares the document type as HTML5 -->
+<html lang="en"> <!-- Defines the HTML document with English language -->
+<head> <!-- Contains metadata and links for the page -->
+    <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 for universal text support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design for mobile devices -->
+    <link href="styles.css" rel="stylesheet"> <!-- Links to the shared CSS file for styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet"> <!-- Imports Inter font from Google Fonts -->
+    <title>My CSS Final Project</title> <!-- Sets the page title shown in the browser tab -->
+</head>
+<body> <!-- Contains all visible content of the page -->
+    <header> <!-- Defines the header section for branding and navigation -->
+        <div class="hero"> <!-- Container for the hero banner with text and button -->
+            <h1>Connor Laber's Personal Website</h1> <!-- Main heading with your name -->
+            <p>Welcome to my <i><b>personal website</b></i></p> <!-- Subheading with italicized, bolded emphasis -->
+            <a href="about.html" class="cta-button">Learn About Me</a> <!-- Link to about.html styled as a button -->
+        </div>
+        <nav> <!-- Navigation bar for site links -->
+            <ul> <!-- Unordered list for navigation items -->
+                <li><a href="index.html" class="active">Home</a></li> <!-- Link to current page, marked active -->
+                <li><a href="about.html">About</a></li> <!-- Link to about.html -->
+                <li><a href="projects.html">Projects</a></li> <!-- Link to projects.html -->
+                <li><a href="contact.html">Contact</a></li> <!-- Link to contact.html -->
+            </ul>
+        </nav>
+    </header>
+    <main> <!-- Main content area of the page -->
+        <section id="welcome"> <!-- Section for welcome content -->
+            <h2>Hello!</h2> <!-- Heading for the welcome section -->
+            <p>I'm Connor Laber, a self-taught programmer from Denver, Colorado, with a passion for coding and finance. Explore my journey, projects, and ways to connect.</p> <!-- Brief intro text -->
+            <div class="welcome-links"> <!-- Container for links to other pages -->
+                <a href="about.html" class="cta-button">About Me</a> <!-- Link to about.html -->
+                <a href="projects.html" class="cta-button">My Projects</a> <!-- Link to projects.html -->
+                <a href="contact.html" class="cta-button">Get in Touch</a> <!-- Link to contact.html -->
+            </div>
+        </section>
+    </main>
+    <footer> <!-- Footer section for site info -->
+        <p>© 2025 Connor Laber. All rights reserved.</p> <!-- Copyright notice -->
+        <a href="projects.html">View Projects</a> <!-- Link to projects.html -->
+    </footer>
+</body>
 </html>
