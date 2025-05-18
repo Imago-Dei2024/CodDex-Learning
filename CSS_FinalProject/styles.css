@@ -1,19 +1,172 @@
-* { 
-   margin: 0; /*Removes default margins from all elements */ 
-   padding: 0; 
-   box-sizing: border-box; /* Males width/height include padding and borders */ 
-}    
+/* Global Styles */
+* {
+    
+    padding: 0; /* Removes default padding from all elements */
+    box-sizing: border-box; /* Makes width/height include padding and borders */
+}
 
-body { 
-    font-family: 'Inter', sans-serif; /* Sets Inter as the Default Font */ 
-    line-height: 1.7; /* Increases line spacing for readability */ 
-    color: #2d3748; /* Sets darker gray text for contrast. */ 
-    background-color: #F4F4F9; /* Sets light gray background for the page */ 
-    scroll-behavior: smooth; /*Enables Smooth scrolling for anchor links */ 
-    overflow-x: hidden; /*Prevents Horizontal Overflow */ 
+body {
+    font-family: 'Inter', sans-serif; /* Sets Inter as the default font */
+    line-height: 1.7; /* Increases line spacing for readability */
+    color: #2D3748; /* Sets darker gray text for contrast */
+    background-color: #F4F4F9; /* Sets light gray background for the page */
+    scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+    overflow-x: hidden; /* Prevents horizontal overflow */
+}
+
+/* Header and Navigation */
+header {
+    position: relative; /* Allows positioning of child elements (e.g., nav) */
+    margin-bottom: 2.5rem; /* Adds space below header for separation */
+}
+
+.hero {
+    background: linear-gradient(135deg, #1B263B 0%, #00A8E8 100%); /* Sets dynamic gradient background */
+    background-size: 200% 200%; /* Enlarges gradient for animation */
+    animation: gradientShift 8s ease infinite; /* Animates gradient shift */
+    text-align: center; /* Centers text content */
+    padding: 6rem 1rem; /* Adds padding (6rem top/bottom, 1rem left/right) */
+    color: #FFFFFF; /* Sets text color to white for contrast */
+    position: relative; /* Enables parallax effect */
+    transform: translateZ(0); /* Forces hardware acceleration for smoothness */
+}
+
+.hero h1 {
+    font-size: 3rem; /* Sets larger font size for main heading */
+    font-weight: 800; /* Makes heading extra bold */
+    margin-bottom: 1.2rem; /* Adds space below heading */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Adds subtle shadow for depth */
+}
+
+.hero p {
+    font-size: 1.4rem; /* Sets larger font for subheading */
+    font-weight: 300; /* Makes subheading lighter for contrast */
+    margin-bottom: 2rem; /* Adds space below paragraph */
+}
+
+.highlight {
+    font-weight: 800; /* Makes text extra bold for emphasis */
+    color: #E6F0FA; /* Uses light teal for contrast */
+    text-shadow: 0 0 8px rgba(0, 168, 232, 0.5); /* Adds neon glow */
+}
+
+nav {
+    background-color: #1B263B; /* Sets dark blue background for nav bar */
+    position: sticky; /* Keeps nav bar at the top when scrolling */
+    top: 0; /* Aligns nav bar to the top of the viewport */
+    z-index: 100; /* Ensures nav stays above other content */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Adds deeper shadow */
+}
+
+nav ul {
+    display: flex; /* Arranges list items in a horizontal row */
+    justify-content: center; /* Centers the list items */
+    list-style: none; /* Removes default bullet points */
+    padding: 1.5rem 0; /* Adds padding (1.5rem top/bottom, 0 left/right) */
+}
+
+nav ul li {
+    margin: 0 2.5rem; /* Adds horizontal spacing between list items */
+    position: relative; /* Enables sliding underline effect */
+}
+
+nav ul li a {
+    color: #FFFFFF; /* Sets link text color to white */
+    text-decoration: none; /* Removes underline from links */
+    font-size: 1.2rem; /* Sets larger font for links */
+    font-weight: 600; /* Makes links bold */
+    transition: color 0.3s ease; /* Smooths color change on hover */
+}
+
+nav ul li a::after {
+    content: ''; /* Creates pseudo-element for underline */
+    position: absolute; /* Positions underline below link */
+    width: 0; /* Starts with no width */
+    height: 2px; /* Sets underline thickness */
+    background-color: #00A8E8; /* Sets teal underline color */
+    left: 0; /* Aligns to left of link */
+    bottom: -4px; /* Positions below text */
+    transition: width 0.3s ease; /* Animates width change */
+}
+
+nav ul li a:hover::after, nav ul li a.active::after {
+    width: 100%; /* Expands underline to full width on hover/active */
+}
+
+nav ul li a:hover {
+    color: #00A8E8; /* Changes link color to teal on hover */
+}
+
+nav ul li a.active {
+    color: #00A8E8; /* Sets teal color for the active page link */
+    font-weight: 700; /* Makes active link bolder */
+}
+
+
+
+
+
+/* ---- Index.html section styles (Home Page) ---- */ 
+
+section { 
+    padding: 5rem 1.2rem; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter:blur(10px); 
+    border-radius: 16px;  
+}
+ 
+/* First Text section on the homepage under "Welcome to my Website" */ 
+#welcome { 
+    padding-right: 13rem; 
+    border: 10px solid; 
 } 
 
-/* Header & Navigation */ 
-header { 
-    
+/* Style for h2 of section id of "welcome" */ 
+#welcome > h2 { 
+   
+} 
+
+/*Style for div class "welcome-links" on Home page */ 
+#welcome > div.welcome-links { 
+
+} 
+
+/*Style for the class "cta-button" of the welcome links */ 
+#welcome > div.welcome-links > .cta-button { 
+
+} 
+
+footer.index-footer{  
+    margin: 25px; 
+    border-top: 2px solid; 
 }
+
+
+/* ---- ABOUT.html STYLES ---- */  
+
+/*Style for entire "about" section */ 
+#about{ 
+
+} 
+
+/* Styling for h2 in the about section */ 
+#about h2 { 
+
+} 
+
+/*Styling for <p> element in about section */ 
+
+#about p { 
+
+} 
+
+
+/*Styling element for footer on about page */ 
+footer.about-footer { 
+    
+} 
+
+
+/* ---- CONTACT.html STYLES ---- */ 
