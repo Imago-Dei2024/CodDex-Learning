@@ -169,4 +169,109 @@ footer.about-footer {
 } 
 
 
-/* ---- CONTACT.html STYLES ---- */ 
+/* ---- CONTACT.html STYLES ---- */   
+
+#contact { 
+    border: 1px solid; 
+    background-color: lightblue; 
+} 
+
+.contact-container { 
+    display: grid; 
+    grid-template-columns: 2fr 1fr; 
+    gap: 2rem; 
+    margin: 2rem 0; 
+} 
+
+/* General styling for both the contact-form and the newsletter-form */
+.contact-form, .newsletter-form { 
+    background: white; 
+    padding: 1.5rem; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba( 0, 0, 0, 0.1);
+}  
+
+/* Styling for the labels on the contact-form and the newsletter-form */ 
+.contact-form label, .newsletter-form label { 
+    display: block; 
+    margin-bottom: 0.5rem; 
+    font-weight: 500; 
+} 
+
+/* Styling for input and selection fields of the contact-form */ 
+.contact-form input, .contact-form select, .contact-form textarea { 
+    width: 55%; 
+    padding: 0.5rem; 
+    border: 1px solid gray; 
+    border-radius: 4px; 
+    margin-bottom: 1rem;
+} 
+
+.contact-form textarea { 
+    resize: vertical; 
+    width: 100%; 
+}  
+
+/* Styling for social-links */ 
+.social-links { 
+    background: var(-- light); 
+    padding: 1.5rem; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+} 
+
+.social-links { 
+    display: block; 
+    color: var(-- primary); 
+    text-decoration: none; 
+    margin: 0.5rem 0; 
+} 
+
+.social-links a:hover { 
+    color: var(--info); 
+} 
+
+/* Article Section */ 
+.article-grid { 
+    display: grid; 
+    grid-template-columns: 1fr; /*Single columns for simplicity */ 
+    gap: 1rem; 
+} 
+
+.article-card { 
+    background: white; 
+    padding: 1.5rem; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) 
+} 
+
+.article-card .learn-more { 
+    color: var(--primary_); 
+    text-decoration: none; 
+    font-weight: 500; 
+} 
+
+.article-card .learn-more:hover { 
+    color: var(--info); 
+} 
+
+/* FAQ Section */ 
+.faq-container { 
+    margin: 2rem 0; 
+} 
+
+.faq-item { 
+    background: white; 
+    padding: 1rem; 
+    border-radius: 8px; 
+    margin-bottom: 1rem; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}  
+
+.FAQ-toggle { 
+    display: none; 
+} 
+
+.FAQ-Question { 
+    display: block;  
+}
