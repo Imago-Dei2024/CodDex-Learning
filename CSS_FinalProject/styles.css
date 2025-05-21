@@ -42,6 +42,10 @@ header {
     font-size: 1.4rem; /* Sets larger font for subheading */
     font-weight: 300; /* Makes subheading lighter for contrast */
     margin-bottom: 2rem; /* Adds space below paragraph */
+} 
+
+#index-hero-subheading{ 
+    text-align: center; 
 }
 
 .highlight {
@@ -123,24 +127,25 @@ section {
     border: 10px solid; 
 } 
 
-/* Style for h2 of section id of "welcome" */ 
-#welcome > h2 { 
-   
-} 
-
 /*Style for div class "welcome-links" on Home page */ 
-#welcome > div.welcome-links { 
-
-} 
+.welcome-links-container { 
+   
+}
 
 /*Style for the class "cta-button" of the welcome links */ 
 #welcome > div.welcome-links > .cta-button { 
 
 } 
 
-footer.index-footer{  
-    margin: 25px; 
-    border-top: 2px solid; 
+#footer-link { 
+    color: #2a6496; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+} 
+
+#footer-link:hover { 
+    color: #1a4b80; 
+    text-decoration: underline; 
 }
 
 
@@ -159,6 +164,9 @@ footer.index-footer{
 
 
 /* Styling for h2 in the about section */ 
+#about-hero-subheading { 
+    text-align: center;
+}
 main { 
     padding: 40px 0; 
 } 
@@ -252,6 +260,9 @@ footer {
 
 /* ==== CONTACT.html STYLES ==== */   
 
+#contact-hero-subheading{ 
+    text-align: center; 
+}
 
 .contact-container { 
     display: grid; 
@@ -415,3 +426,33 @@ footer a:hover {
 } 
 
 /* ==== PROJECTS.html Styling ==== */ 
+.Projects-Subheading { 
+    text-align: center;
+} 
+
+/* Title for Web-Dev Projects Section */
+#Web-Development-Projects h2{ 
+    text-align: center;
+} 
+
+/* Title for IOS-Dev section */ 
+#IOS-Mobile-Development h2{ 
+    text-align: center;
+} 
+
+/* Title for Certification-Based Section */ 
+#Certification-Projects h2 { 
+    text-align: center; 
+} 
+
+#footer-link { 
+    color: #2a6496; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+} 
+
+#footer-link:hover { 
+    color: #1a4b80; 
+    text-decoration: underline; 
+}
+
