@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Financial Projections Dashboard</title>
+        <link href="styles.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script> 
+    </head> 
+    <body>
+        <div class="dashboard">
+            <div class="header">
+                <h1>Financial Projections Dashboard</h1>
+                <p>Advanced Valuation & Financial Analysis</p>
+            </div>
+
+            <div class="controls-section">
+                <h3 style="margin-bottom: 20px; color: #f1f5f9;">Financial Inputs</h3>
+                <div class="controls-grid">
+                    <div class="input-group">
+                        <label>Current Revenue ($)</label>
+                        <input type="number" id="currentRevenue" value="10000000" step="100000">
+                    </div>
+                    <div class="input-group">
+                        <label>Revenue Growth (%)</label>
+                        <input type="number" id="revenueGrowth" value="15" step="1">
+                    </div>
+                    <div class="input-group">
+                        <label>Gross Margin (%)</label>
+                        <input type="number" id="grossMargin" value="70" step="1">
+                    </div>
+                    <div class="input-group">
+                        <label>Operating Expenses (%)</label>
+                        <input type="number" id="opexPercent" value="50" step="1">
+                    </div>
+                    <div class="input-group">
+                        <label>Tax Rate (%)</label>
+                        <input type="number" id="taxRate" value="21" step="1">
+                    </div>
+                    <div class="input-group">
+                        <label>Discount Rate (%)</label>
+                        <input type="number" id="discountRate" value="10" step="0.5">
+                    </div>
+                </div>
+                <div class="scenario-buttons">
+                    <button class="btn btn-primary" onclick="updateProjections()">Update Projections</button>
+                    <button class="btn btn-secondary" onclick="setScenario('conservative')">Conservative</button>
+                    <button class="btn btn-secondary" onclick="setScenario('moderate')">Moderate</button>
+                    <button class="btn btn-secondary" onclick="setScenario('aggressive')">Aggressive</button>
+                </div>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Current Valuation</div>
+                    <div class="metric-value" id="currentValuation">$50M</div>
+                </div>
+                <div class="metric-card success">
+                    <div class="metric-label">5-Year Revenue</div>
+                    <div class="metric-value" id="projectedRevenue">$25M</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">EBITDA Margin</div>
+                    <div class="metric-value" id="ebitdaMargin">20%</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">ROI</div>
+                    <div class="metric-value" id="roi">25%</div>
+                </div>
+            </div>
+
+            <div class="charts-section">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Revenue & EBITDA Projections</h3>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="mainChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Valuation Breakdown</h3>
+                    </div>
+                    <div class="small-chart-container">
+                        <canvas id="valuationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="valuation-section">
+                <h3 style="margin-bottom: 20px; color: #f1f5f9;">Valuation Methods</h3>
+                <div class="valuation-grid">
+                    <div class="valuation-method">
+                        <h4>DCF Valuation</h4>
+                        <div class="valuation-value" id="dcfValue">$45M</div>
+                        <div class="valuation-range">Based on FCF</div>
+                    </div>
+                    <div class="valuation-method">
+                        <h4>Revenue Multiple</h4>
+                        <div class="valuation-value" id="revenueMultipleValue">$50M</div>
+                        <div class="valuation-range" id="revenueMultipleText">5.0x Revenue</div>
+                    </div>
+                    <div class="valuation-method">
+                        <h4>EBITDA Multiple</h4>
+                        <div class="valuation-value" id="ebitdaMultipleValue">$48M</div>
+                        <div class="valuation-range" id="ebitdaMultipleText">12x EBITDA</div>
+                    </div>
+                    <div class="valuation-method">
+                        <h4>Average Valuation</h4>
+                        <div class="valuation-value" id="avgValue">$48M</div>
+                        <div class="valuation-range">Blended approach</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <h3 style="margin-bottom: 20px; color: #f1f5f9;">5-Year Projections</h3>
+                <table id="projectionTable">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Metric</th>
+                            <th>Year 1</th>
+                            <th>Year 2</th>
+                            <th>Year 3</th>
+                            <th>Year 4</th>
+                            <th>Year 5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script>
+            // Financial Model
+            let financialModel = {
+                currentRevenue: 10000000,
+                revenueGrowth: 0.15,
+                grossMargin: 0.70,
+                opexPercent: 0.50,
+                taxRate: 0.21,
+                discountRate: 0.10,
+                projectionYears: 5
+            };
+
+            // Industry multiples
+            const industryMultiples = {
+                revenue: 5,
+                ebitda: 12
+            };
+
+            // Chart instances
+            let mainChart, valuationChart;
+
+            // Calculate projections
+            function calculateProjections() {
+                const projections = [];
+                let currentRev = financialModel.currentRevenue;
+                
+                for (let year = 1; year <= financialModel.projectionYears; year++) {
+                    currentRev *= (1 + financialModel.revenueGrowth);
+                    
+                    const grossProfit = currentRev * financialModel.grossMargin;
+                    const opex = currentRev * financialModel.opexPercent;
+                    const ebitda = grossProfit - opex;
+                    const tax = Math.max(0, ebitda * financialModel.taxRate);
+                    const netIncome = ebitda - tax;
+                    const fcf = netIncome * 0.8;
+                    
+                    projections.push({
+                        year,
+                        revenue: currentRev,
+                        grossProfit,
+                        opex,
+                        ebitda,
+                        netIncome,
+                        fcf,
+                        ebitdaMargin: ebitda / currentRev,
+                        netMargin: netIncome / currentRev
+                    });
+                }
+                
+                return projections;
+            }
+
+            // Calculate DCF
+            function calculateDCF(projections) {
+                let pv = 0;
+                
+                projections.forEach((proj, i) => {
+                    pv += proj.fcf / Math.pow(1 + financialModel.discountRate, i + 1);
+                });
+                
+                const terminalFCF = projections[projections.length - 1].fcf * 1.03;
+                const terminalValue = terminalFCF / (financialModel.discountRate - 0.03);
+                const pvTerminal = terminalValue / Math.pow(1 + financialModel.discountRate, financialModel.projectionYears);
+                
+                return pv + pvTerminal;
+            }
+
+            // Calculate valuations
+            function calculateValuations() {
+                const projections = calculateProjections();
+                const dcf = calculateDCF(projections);
+                const revenueMultiple = financialModel.currentRevenue * industryMultiples.revenue;
+                const currentEbitda = financialModel.currentRevenue * (financialModel.grossMargin - financialModel.opexPercent);
+                const ebitdaMultiple = Math.max(0, currentEbitda * industryMultiples.ebitda);
+                const average = (dcf + revenueMultiple + ebitdaMultiple) / 3;
+                
+                return {
+                    dcf,
+                    revenueMultiple,
+                    ebitdaMultiple,
+                    average
+                };
+            }
+
+            // Create main chart
+            function createMainChart() {
+                const ctx = document.getElementById('mainChart').getContext('2d');
+                const projections = calculateProjections();
+                
+                const config = {
+                    type: 'line',
+                    data: {
+                        labels: projections.map(p => `Year ${p.year}`),
+                        datasets: [
+                            {
+                                label: 'Revenue',
+                                data: projections.map(p => p.revenue),
+                                borderColor: '#60a5fa',
+                                backgroundColor: 'rgba(96, 165, 250, 0.1)',
+                                borderWidth: 3,
+                                tension: 0.4,
+                                fill: true
+                            },
+                            {
+                                label: 'EBITDA',
+                                data: projections.map(p => p.ebitda),
+                                borderColor: '#10b981',
+                                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                                borderWidth: 3,
+                                tension: 0.4,
+                                fill: true
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                                labels: {
+                                    usePointStyle: true,
+                                    padding: 20,
+                                    color: '#e2e8f0'
+                                }
+                            },
+                            tooltip: {
+                                backgroundColor: '#0f172a',
+                                titleColor: '#f1f5f9',
+                                bodyColor: '#e2e8f0',
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.dataset.label + ': $' + 
+                                            (context.parsed.y / 1000000).toFixed(1) + 'M';
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: {
+                                    color: '#1e293b'
+                                },
+                                ticks: {
+                                    color: '#94a3b8',
+                                    callback: function(value) {
+                                        return '$' + (value / 1000000).toFixed(0) + 'M';
+                                    }
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    color: '#1e293b'
+                                },
+                                ticks: {
+                                    color: '#94a3b8'
+                                }
+                            }
+                        }
+                    }
+                };
+                
+                if (mainChart) {
+                    mainChart.destroy();
+                }
+                mainChart = new Chart(ctx, config);
+            }
+
+            // Create valuation chart
+            function createValuationChart() {
+                const ctx = document.getElementById('valuationChart').getContext('2d');
+                const valuations = calculateValuations();
+                
+                const config = {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['DCF', 'Revenue Multiple', 'EBITDA Multiple'],
+                        datasets: [{
+                            data: [
+                                valuations.dcf,
+                                valuations.revenueMultiple,
+                                valuations.ebitdaMultiple
+                            ],
+                            backgroundColor: [
+                                '#60a5fa',
+                                '#a78bfa',
+                                '#10b981'
+                            ],
+                            borderWidth: 0,
+                            hoverOffset: 10
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    padding: 15,
+                                    usePointStyle: true,
+                                    color: '#e2e8f0'
+                                }
+                            },
+                            tooltip: {
+                                backgroundColor: '#0f172a',
+                                titleColor: '#f1f5f9',
+                                bodyColor: '#e2e8f0',
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.label + ': $' + 
+                                            (context.parsed / 1000000).toFixed(1) + 'M';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+                
+                if (valuationChart) {
+                    valuationChart.destroy();
+                }
+                valuationChart = new Chart(ctx, config);
+            }
+
+            // Update displays
+            function updateDisplays() {
+                const valuations = calculateValuations();
+                const projections = calculateProjections();
+                
+                // Update metrics
+                document.getElementById('currentValuation').textContent = 
+                    '$' + (valuations.average / 1000000).toFixed(1) + 'M';
+                document.getElementById('projectedRevenue').textContent = 
+                    '$' + (projections[4].revenue / 1000000).toFixed(1) + 'M';
+                
+                const currentEbitdaMargin = (financialModel.grossMargin - financialModel.opexPercent) * 100;
+                document.getElementById('ebitdaMargin').textContent = 
+                    currentEbitdaMargin.toFixed(1) + '%';
+                
+                const roi = financialModel.revenueGrowth * 100 + 10;
+                document.getElementById('roi').textContent = roi.toFixed(1) + '%';
+                
+                // Update valuation methods
+                document.getElementById('dcfValue').textContent = 
+                    '$' + (valuations.dcf / 1000000).toFixed(1) + 'M';
+                document.getElementById('revenueMultipleValue').textContent = 
+                    '$' + (valuations.revenueMultiple / 1000000).toFixed(1) + 'M';
+                document.getElementById('ebitdaMultipleValue').textContent = 
+                    '$' + (valuations.ebitdaMultiple / 1000000).toFixed(1) + 'M';
+                document.getElementById('avgValue').textContent = 
+                    '$' + (valuations.average / 1000000).toFixed(1) + 'M';
+                
+                // Update multiple text
+                document.getElementById('revenueMultipleText').textContent = 
+                    industryMultiples.revenue + 'x Revenue';
+                document.getElementById('ebitdaMultipleText').textContent = 
+                    industryMultiples.ebitda + 'x EBITDA';
+                
+                // Update table
+                updateProjectionTable(projections);
+            }
+
+            // Update projection table
+            function updateProjectionTable(projections) {
+                const tbody = document.querySelector('#projectionTable tbody');
+                const metrics = [
+                    { key: 'revenue', label: 'Revenue', format: 'currency' },
+                    { key: 'ebitda', label: 'EBITDA', format: 'currency' },
+                    { key: 'netIncome', label: 'Net Income', format: 'currency' },
+                    { key: 'ebitdaMargin', label: 'EBITDA Margin', format: 'percentage' }
+                ];
+                
+                tbody.innerHTML = metrics.map(metric => {
+                    const row = `<tr>
+                        <td style="text-align: left; font-weight: 600;">${metric.label}</td>
+                        ${projections.map(proj => {
+                            const value = proj[metric.key];
+                            let formatted;
+                            if (metric.format === 'currency') {
+                                formatted = '$' + (value / 1000000).toFixed(1) + 'M';
+                            } else if (metric.format === 'percentage') {
+                                formatted = (value * 100).toFixed(1) + '%';
+                            }
+                            const className = value > 0 ? 'positive-value' : 'negative-value';
+                            return `<td class="${className}">${formatted}</td>`;
+                        }).join('')}
+                    </tr>`;
+                    return row;
+                }).join('');
+            }
+
+            // Update projections
+            function updateProjections() {
+                // Get input values
+                financialModel.currentRevenue = parseFloat(document.getElementById('currentRevenue').value) || 10000000;
+                financialModel.revenueGrowth = parseFloat(document.getElementById('revenueGrowth').value) / 100 || 0.15;
+                financialModel.grossMargin = parseFloat(document.getElementById('grossMargin').value) / 100 || 0.70;
+                financialModel.opexPercent = parseFloat(document.getElementById('opexPercent').value) / 100 || 0.50;
+                financialModel.taxRate = parseFloat(document.getElementById('taxRate').value) / 100 || 0.21;
+                financialModel.discountRate = parseFloat(document.getElementById('discountRate').value) / 100 || 0.10;
+                
+                // Update all displays
+                updateDisplays();
+                createMainChart();
+                createValuationChart();
+            }
+
+            // Set scenarios
+            function setScenario(scenario) {
+                const scenarios = {
+                    conservative: {
+                        revenueGrowth: 8,
+                        grossMargin: 65,
+                        opexPercent: 55,
+                        discountRate: 12
+                    },
+                    moderate: {
+                        revenueGrowth: 15,
+                        grossMargin: 70,
+                        opexPercent: 50,
+                        discountRate: 10
+                    },
+                    aggressive: {
+                        revenueGrowth: 25,
+                        grossMargin: 75,
+                        opexPercent: 45,
+                        discountRate: 8
+                    }
+                };
+                
+                const selected = scenarios[scenario];
+                document.getElementById('revenueGrowth').value = selected.revenueGrowth;
+                document.getElementById('grossMargin').value = selected.grossMargin;
+                document.getElementById('opexPercent').value = selected.opexPercent;
+                document.getElementById('discountRate').value = selected.discountRate;
+                
+                updateProjections();
+            }
+
+            // Initialize charts
+            function initCharts() {
+                Chart.defaults.color = '#94a3b8';
+                Chart.defaults.borderColor = '#334155';
+                Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+                
+                createMainChart();
+                createValuationChart();
+            }
+
+            // Initialize
+            document.addEventListener('DOMContentLoaded', function() {
+                initCharts();
+                updateDisplays();
+            });
+        </script>
+    </body>
+</html>
